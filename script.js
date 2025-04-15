@@ -85,31 +85,34 @@ function extractFontName(link) {
 
 
 function getReadmeText(type, name) {
-  const base = `Introducing **${name} ${type} Presentation Template**`;
-  return `${base}
+  const extension = type === "Keynote" ? ".Key" : ".PPTX";
+  const includePPT = type === "PowerPoint" ? "\n- PowerPoint .PPT file" : "";
+  const extraNote = type === "Keynote" ? "- Just Drag and Drop!" : "";
+  const colorTheme = type === "Keynote" ? " & color theme" : "";
+  const downloadSource = type === "Keynote" ? "Help File" : "Documentation";
 
-This is a professional template designed for ${type}.`;
-}
-         ${type === "Keynote" ? "Template" : "Presentation Template"}**
+  const title = `Introducing **${name} ${type} Presentation Template**`;
+
+  return `${title}
+
+This is a professional template designed for ${type}.
 
 **Main Feature :**
 - All graphics resizable and editable
 - Used and recommended free web fonts
-- Based on Master Slides${type === "Keynote" ? " & color theme" : ""}
+- Based on Master Slides${colorTheme}
 - 16:9 Wide Screen Ratio
 - Picture Placeholder
-${type === "Keynote" ? "- Just Drag and Drop!" : ""}
+${extraNote}
 - Easily Editable!
 
 **File Included :**
-- ${type} ${type === "Keynote" ? ".Key" : ".PPTX"} file${type === "PowerPoint" ? "\n- PowerPoint .PPT file" : ""}
+- ${type} ${extension} file${includePPT}
 - Documentation File
 
 **Font Used :**
 - All Font Free
-- Link Download include in ${type === "Keynote" ? "Help File" : "Documentation"}
+- Link Download include in ${downloadSource}
 
 **Note: Images are not included and are used for demo purposes only.**`;
-
-  return base;
 }
