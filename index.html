@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Template Pack Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Template Pack Generator</h1>
+    <form id="templateForm">
+      <label>Template Name:
+        <input type="text" id="templateName" required />
+      </label>
+      <label>Template Type:
+        <select id="templateType" required>
+          <option value="PowerPoint">PowerPoint</option>
+          <option value="Google Slides">Google Slides</option>
+          <option value="Keynote">Keynote</option>
+        </select>
+      </label>
+      <label>Font Link 1:
+        <input type="url" id="fontLink1" required />
+      </label>
+      <label>Font Link 2:
+        <input type="url" id="fontLink2" />
+      </label>
+      <label>Upload Presentation File(s):
+        <input type="file" id="presentationFiles" multiple required />
+      </label>
+      <button type="submit">Generate ZIP</button>
+    </form>
+    <div id="status"></div>
+  </div>
+
+  <script src="jszip.min.js"></script>
+  <script src="file-saver.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
